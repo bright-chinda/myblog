@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.snow.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <!-- header -->
+    <header style="border-bottom: 1px solid rgb(0 0 0 / 8%); box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.09);">
+        <a href="#" class="editor-back-cont">
+          <button class="editor-back-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 13 11" fill="none">
+                <path d="M5.6241 0.0419834C5.72308 0.0835893 5.80768 0.154064 5.86722 0.244494C5.92675 0.334924 5.95854 0.44125 5.95856 0.550024L5.95856 4.94983L12.4584 4.94983C12.602 4.94983 12.7398 5.00777 12.8414 5.11091C12.9429 5.21406 13 5.35394 13 5.49981C13 5.64567 12.9429 5.78556 12.8414 5.8887C12.7398 5.99184 12.602 6.04978 12.4584 6.04978L5.95856 6.04978L5.95856 10.4496C5.95865 10.5584 5.92693 10.6648 5.86742 10.7554C5.80791 10.8459 5.72328 10.9164 5.62425 10.9581C5.52523 10.9998 5.41625 11.0107 5.31113 10.9894C5.206 10.9682 5.10945 10.9157 5.0337 10.8387L0.158858 5.88892C0.108498 5.83784 0.0685461 5.77718 0.041288 5.71042C0.0140299 5.64365 -2.37262e-07 5.57208 -2.40421e-07 5.49981C-2.4358e-07 5.42753 0.0140299 5.35597 0.041288 5.2892C0.0685461 5.22243 0.108498 5.16178 0.158858 5.1107L5.0337 0.160915C5.10949 0.0840252 5.20604 0.0316846 5.31113 0.010515C5.41622 -0.0106556 5.52514 0.000296351 5.6241 0.0419834Z" fill="black"/>
+            </svg>
+          </button>
+          Back
+        </a>
+
+        <button class="publish-btn">
+          Publish
+        </button>
+    </header>
+    <!-- header ends here-->
+
+    <!-- main container-->
+    <div class="editor-main-container">
+      <div class="editor-content-section">
+        <div class="editor-content-body">
+          <p id="editor">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus fuga, harum quae repudiandae nisi doloremque, aut quidem amet cumque sed neque animi ea autem praesentium? Quaerat suscipit velit culpa corporis!</p>
+        </div>
+      </div>
+
+      <div class="editor-context-section">
+        <div style="padding: 0 18px;">
+          <button class="meta-data-btn">Meta Data</button>
+        </div>
+        <div class="editor-content-scroll-body custom-scrollbar">
+          <div class="meta-data-container">
+            <div class="title-labels">
+              <h5>Title</h5>
+              <div class="title-div" contenteditable="true">
+                Start optimizing your blog post! Generate your Meta Title now. It is cool.
+              </div>
+            </div>
+            <div class="generate-btn-body">
+              <button class="generate-text-btn">Generate</button>
+              <button class="generate-icon-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" class="generate-icon" width="25" height="25" viewBox="0 0 35 38" fill="none">
+                  <path d="M1 37H34M4.43612 21.3743C3.55632 22.2287 3.06227 23.3868 3.0625 24.5942V31.0001H9.70994C10.9557 31.0001 12.1499 30.5201 13.0306 29.6641L32.6243 10.6545C33.5044 9.80022 33.9988 8.64208 33.9988 7.43455C33.9988 6.22702 33.5044 5.06888 32.6243 4.21461L30.6897 2.33465C30.2534 1.91136 29.7353 1.57561 29.1651 1.3466C28.5949 1.11759 27.9838 0.999814 27.3666 1C26.7494 1.00019 26.1383 1.11833 25.5682 1.34768C24.9982 1.57704 24.4803 1.9131 24.0443 2.33665L4.43612 21.3743Z" stroke="#9D9D9D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </div>
+
+            <div class="title-labels">
+              <h5>Description</h5>
+              <div class="title-div" contenteditable="true">
+                Start optimizing your blog post! Generate your Meta Description now. It is cool.
+              </div>
+            </div>
+            <div class="generate-btn-body">
+              <button class="generate-text-btn">Generate</button>
+              <button class="generate-icon-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" class="generate-icon" width="25" height="25" viewBox="0 0 35 38" fill="none">
+                  <path d="M1 37H34M4.43612 21.3743C3.55632 22.2287 3.06227 23.3868 3.0625 24.5942V31.0001H9.70994C10.9557 31.0001 12.1499 30.5201 13.0306 29.6641L32.6243 10.6545C33.5044 9.80022 33.9988 8.64208 33.9988 7.43455C33.9988 6.22702 33.5044 5.06888 32.6243 4.21461L30.6897 2.33465C30.2534 1.91136 29.7353 1.57561 29.1651 1.3466C28.5949 1.11759 27.9838 0.999814 27.3666 1C26.7494 1.00019 26.1383 1.11833 25.5682 1.34768C24.9982 1.57704 24.4803 1.9131 24.0443 2.33665L4.43612 21.3743Z" stroke="#9D9D9D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </div>
+
+            <div class="title-labels">
+              <h5>Open Graph Image</h5>
+              <label for="file-upload-input" class="add-file-label">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 28 25" fill="none">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M7.8036 1.85556C8.1871 1.28481 8.70671 0.816828 9.31629 0.493133C9.92588 0.169439 10.6066 4.98313e-05 11.298 0H16.702C17.3934 4.98313e-05 18.0741 0.169439 18.6837 0.493133C19.2933 0.816828 19.8129 1.28481 20.1964 1.85556L21.3332 3.54861C21.4611 3.73877 21.6343 3.89468 21.8375 4.00249C22.0407 4.11031 22.2676 4.1667 22.498 4.16667H23.8C24.9139 4.16667 25.9822 4.60565 26.7698 5.38705C27.5575 6.16846 28 7.22826 28 8.33333V20.8333C28 21.9384 27.5575 22.9982 26.7698 23.7796C25.9822 24.561 24.9139 25 23.8 25H4.2C3.08609 25 2.0178 24.561 1.23015 23.7796C0.442499 22.9982 0 21.9384 0 20.8333V8.33333C0 7.22826 0.442499 6.16846 1.23015 5.38705C2.0178 4.60565 3.08609 4.16667 4.2 4.16667H5.502C5.73243 4.1667 5.9593 4.11031 6.1625 4.00249C6.36569 3.89468 6.53891 3.73877 6.6668 3.54861L7.8036 1.85556ZM11.2 13.8889C11.2 13.1522 11.495 12.4456 12.0201 11.9247C12.5452 11.4038 13.2574 11.1111 14 11.1111C14.7426 11.1111 15.4548 11.4038 15.9799 11.9247C16.505 12.4456 16.8 13.1522 16.8 13.8889C16.8 14.6256 16.505 15.3321 15.9799 15.8531C15.4548 16.374 14.7426 16.6667 14 16.6667C13.2574 16.6667 12.5452 16.374 12.0201 15.8531C11.495 15.3321 11.2 14.6256 11.2 13.8889ZM14 8.33333C12.5148 8.33333 11.0904 8.91865 10.0402 9.96052C8.99 11.0024 8.4 12.4155 8.4 13.8889C8.4 15.3623 8.99 16.7754 10.0402 17.8173C11.0904 18.8591 12.5148 19.4444 14 19.4444C15.4852 19.4444 16.9096 18.8591 17.9598 17.8173C19.01 16.7754 19.6 15.3623 19.6 13.8889C19.6 12.4155 19.01 11.0024 17.9598 9.96052C16.9096 8.91865 15.4852 8.33333 14 8.33333Z" fill="black"/>
+                </svg>
+                Add Image
+              </label>
+              <input type="file" name="" id="file-upload-input">
+            </div>
+          </div>
+
+          <div class="call-to-action-container">
+            <h5 style="text-align: center; color: #00103E; font-weight: 600; font-size: 14px;">
+              Call To Action
+            </h5>
+            <div class="generate-btn-body">
+              <div class="dropdown lead-dropdown">
+                <button class="btn lead-button btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Lead gen
+                </button>
+                <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </div>
+
+              <div class="dropdown lead-dropdown">
+                <button class="btn lead-button btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Start now
+                </button>
+                <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="title-labels">
+              <h5>Change Color</h5>
+              <div class="color-container">
+                <div class="color-inputs">
+                  <div class="color-input">
+                    <input type="color" name="" id="">
+                  </div>
+                  <h5>Text Color</h5>
+                </div>
+                <div class="color-inputs">
+                  <div class="color-input">
+                    <input type="color" name="" id="">
+                  </div>
+                  <h5>Background Color</h5>
+                </div>
+                <div class="color-inputs">
+                  <div class="color-input">
+                    <input type="color" name="" id="">
+                  </div>
+                  <h5>Button Color</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- main container ends here-->
+
+  
+
+    <script src="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        const quill = new Quill('#editor', {
+          theme: 'snow'
+        });
+    </script>
+    <!-- <script src="js/script.js"></script> -->
+</body>
+</html>
