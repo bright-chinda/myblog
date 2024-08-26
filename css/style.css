@@ -311,13 +311,20 @@ header{
 }
 .enter-url-button{
   width: 100%;
-  background-color: #0d6efd;
-  color: white;
+  /* background-color: #0d6efd; */
+  color: #0d6efd;
+  background-color: white;
   padding: 10px 10px;
   font-weight: 600;
-  border: 1px solid #0d6efd;
+  border: 1px solid #D9D9D9;
   border-bottom-left-radius: 8px;
   border-top-left-radius: 8px;
+}
+#url-input{
+  width: 100%;
+  border: 1px solid #D9D9D9;
+  border-radius: 5px;
+  padding: 10px 10px;
 }
 .enter-keyword-button{
   width: 100%;
@@ -619,6 +626,21 @@ header{
 }
 
 /* editor page ends here*/
+
+
+
+.btns.active{
+  background-color: #0d6efd;
+  color: white;
+}
+
+
+.url-and-keyword-container:has(.enter-url-button.active) ~ #Keyword-textarea{
+  display: none;
+}
+.url-and-keyword-container:has(.enter-keyword-button.active) ~ #url-input{
+  display: none;
+}
 
 
 
