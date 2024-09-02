@@ -512,7 +512,7 @@ header{
 .editor-content-body p{
   text-align: center;
 }
-.form-container{
+/* .form-container{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -550,7 +550,7 @@ header{
   color: white;
   margin-top: 30px;
   border-radius: 3px;
-}
+} */
 
 .custom-scrollbar::-webkit-scrollbar {
   -webkit-appearance: none;
