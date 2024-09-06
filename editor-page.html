@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link href="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.snow.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
 </head>
@@ -30,12 +29,29 @@
     <div class="editor-main-container">
       <div class="editor-content-section custom-scrollbar">
         <div class="editor-content-body">
-          <p id="editor">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus fuga, harum quae repudiandae nisi doloremque, aut quidem amet cumque sed neque animi ea autem praesentium? Quaerat suscipit velit culpa corporis!
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam iure nisi inventore ad nulla incidunt quod fugit pariatur animi vel, tenetur minus id, earum, neque expedita eos quisquam fugiat! Cupiditate.
-            us ullam necessitatibus qui a vero asperiores quod illo voluptates rerum provident deserunt voluptate sapiente minus dolorum soluta, obcaecati, molestias recusandae ducimus.
-          </p>
+          <textarea id="text-description" name="text-description">
+            kk
 
-          <div class="form-container" style=" display: flex; align-items: center;justify-content: center; flex-direction: column;width: 100%; height: 250px; background-color: #2263DE; border-radius: 5px; padding: 10px 30px; margin-top: 30px;">
+            <div class="form-container" style=" display: flex; align-items: center;justify-content: center; flex-direction: column; height: 250px; background-color: #2263DE; border-radius: 5px; padding: 10px 30px; margin-top: 30px;">
+             <h5 style=" color: white; margin-top: 10px; margin-bottom: 5px; font-size: 17px;">Always be inform on our weekly updates</h5>
+              <div class="form-inputs" style=" display: flex; justify-content: space-between; gap: 20px; width: 100%;">
+                <div class="first-form-input" style="width: 47%; font-family: Montserrat, sans-serif;">
+                  <input type="text" name="" id="" placeholder="Name here" style=" width: 100%; padding: 12px 10px; border-radius: 3px; margin-top: 20px;  border: 1px solid transparent; outline: none;">
+                </div>
+                <div class="first-form-input" style="width: 47%;">
+                  <input type="text" name="" id="" placeholder="Email@gmail.com" style=" width: 100%; padding: 12px 10px; border-radius: 3px; margin-top: 20px; border: 1px solid transparent; outline: none;">
+                </div>
+              </div>
+              <button style="  width: 100%; padding: 15px 10px; font-size: 16px; background-color: #2FD16A; color: white; margin-top: 30px; border-radius: 3px; border: 1px solid transparent;">Learn More</button>
+            </div>
+
+            <div class="form-container" style=" display: flex; align-items: center;justify-content: center; flex-direction: column; height: 250px; background-color: #2263DE; border-radius: 5px; padding: 10px 30px; margin-top: 30px;">
+              <h5 style=" color: white; margin-top: 10px; margin-bottom: 5px; font-size: 17px;">Always be inform on our weekly updates</h5>
+              <button style=" width: 100%; padding: 15px 10px; font-size: 16px; background-color: #2FD16A; color: white; margin-top: 30px; border-radius: 3px; border: 1px solid transparent;">Learn More</button>
+            </div>
+          </textarea>
+
+          <!-- <div class="form-container" style=" display: flex; align-items: center;justify-content: center; flex-direction: column;width: 100%; height: 250px; background-color: #2263DE; border-radius: 5px; padding: 10px 30px; margin-top: 30px;">
             <h5 style=" color: white; margin-top: 10px;">Always be inform on our weekly updates</h5>
             <div class="form-inputs" style=" display: flex; justify-content: space-between; gap: 20px; width: 100%;">
               <div class="first-form-input" style="width: 50%;">
@@ -46,13 +62,9 @@
               </div>
             </div>
             <button style="  width: 100%; padding: 10px 10px; background-color: #2FD16A; color: white; margin-top: 30px; border-radius: 3px;">Learn More</button>
-          </div>
+          </div> -->
 
-          <div class="form-container" style=" display: flex; align-items: center;justify-content: center; flex-direction: column;width: 100%; height: 250px; background-color: #2263DE; border-radius: 5px; padding: 10px 30px; margin-top: 30px;">
-            <h5 style=" color: white; margin-top: 10px;">Always be inform on our weekly updates</h5>
-            <!-- lllll -->
-            <button style="  width: 100%; padding: 10px 10px; background-color: #2FD16A; color: white; margin-top: 30px; border-radius: 3px;">Learn More</button>
-          </div>
+         
         </div>
       </div>
 
@@ -163,12 +175,34 @@
 
   
 
-    <script src="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/6.0.0/tinymce.min.js"></script>
     <script>
-        const quill = new Quill('#editor', {
-          theme: 'snow'
-        });
+      tinymce.init({
+     selector: 'textarea', 
+     menubar: false,
+     statusbar: false,
+    //  content_css: '/mycontent.css',
+    content_style:`  .cta5 {
+        margin-top: 28px;
+        margin-bottom: 40px;
+        padding: 40px 60px;
+        background: #3b82f6;
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        background-image: url("../images/cta/left-corner5.svg"), url("../images/cta/right-corner5.svg");
+        background-position: -17px 0px, calc(100% + 6px) calc(100% - 5px);
+        background-repeat: no-repeat, no-repeat;
+        background-size: 80px 49px;
+    }
+                 ` ,
+     toolbar: 'undo redo styles bold italic alignleft aligncenter alignright outdent indent code',
+      plugins: 'code'
+    
+    });
     </script>
     <!-- <script src="js/script.js"></script> -->
 </body>
