@@ -531,45 +531,6 @@ header{
 .first-form-input input{
   width: 100%;
 }
-/* .form-container{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  width: 100%;
-  height: 250px;
-  background-color: #2263DE;
-  border-radius: 5px;
-  padding: 10px 30px;
-  margin-top: 30px;
-}
-.form-inputs{
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  width: 100%;
-}
-.form-container h5{
-  color: white;
-  margin-top: 10px;
-}
-.first-form-input{
-  width: 50%;
-}
-.first-form-input input{
-  width: 100%;
-  padding: 8px 10px;
-  border-radius: 3px;
-  margin-top: 20px;
-}
-.form-container button{
-  width: 100%;
-  padding: 10px 10px;
-  background-color: #2FD16A;
-  color: white;
-  margin-top: 30px;
-  border-radius: 3px;
-} */
 
 .custom-scrollbar::-webkit-scrollbar {
   -webkit-appearance: none;
@@ -701,6 +662,102 @@ header{
 .url-and-keyword-container:has(.enter-keyword-button.active) ~ #url-input{
   display: none;
 }
+
+
+
+/* settings page */
+/* zapier section */
+.zapier-card-container{
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 3px rgb(0 0 0 / 20%);
+}
+.zapier-card-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+  padding-top: 18px;
+}
+.zapier-header-img{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 500;
+}
+.zapier-header-img .img{
+  width: 30px;
+}
+.connect-integration-btn{
+  background-color: white;
+  font-weight: 500;
+  padding: 5px 15px;
+  border-radius: 5px;
+  font-size: 13px;
+  border: 1px solid #585858;
+}
+.request-integration-btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background-color: white;
+  font-weight: 400;
+  font-size: 15px;
+  padding: 5px 20px;
+  border-radius: 3px;
+  border: 1px solid #585858;
+}
+/* settings page ends here*/
+
+
+
+/* boostrap tabs styling */
+.mb-3{
+  margin-bottom: 0 !important;
+}
+.nav{
+  display: flex;
+  gap: 20px;
+  /* color: black !important; */
+  --bs-nav-link-color: black !important;
+  --bs-nav-link-padding-x: 0 !important;
+}
+.nav-pills {
+  --bs-nav-pills-border-radius: none !important;
+  font-weight: 500 !important;
+  /* border-bottom: 1px solid #0d6efd; */
+  --bs-nav-pills-link-active-color: #0d6efd;
+  --bs-nav-pills-link-active-bg: none !important;
+}
+.nav-link{
+  padding: var(--bs-nav-link-padding-y) none !important;
+}
+.nav-link.active{
+  border-bottom: 2px solid #0d6efd;
+  /* --bs-nav-pills-link-active-border-bottom: 1px solid #0d6efd !important; */
+}
+.integration-nav-btn{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.integration-nav-btn .img{
+  width: 20px;
+}
+.integration-nav-btn.nav-link{
+  padding: 5px 10px !important;
+}
+.integration-nav-btn.nav-link.active {
+  --bs-nav-pills-border-radius: 5px !important;
+  font-weight: 400 !important;
+  /* border-bottom: 1px solid #0d6efd; */
+  --bs-nav-pills-link-active-color: white;
+  --bs-nav-pills-link-active-bg: #0d6efd !important;
+  /* padding: 5px 10px !important; */
+}
+/* boostrap tabs styling ends here*/
+
 
 
 
