@@ -926,6 +926,9 @@ header {
   .modal-body {
     padding: 0 0 !important;
   }
+  .lead-section {
+    display: none;
+  }
   .date_filter,
   .project_name,
   .date_filter .input,
