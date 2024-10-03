@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <!--create blog Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <!-- <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div> -->
+          <div class="modal-body">
+            <div class="url-and-keyword-container">
+              <button class="enter-url-button btns active">
+                Enter URL
+              </button>
+              <button class="enter-keyword-button btns">
+                Enter Keyword
+              </button>
+            </div>
+            <input type="text" name="" id="url-input">
+            <textarea name="" id="Keyword-textarea" ></textarea>
+
+            <div class="step-to-generate-blog">
+              <label for="generate-review-checkbox" class="generate-review">
+                <input type="checkbox" name="generate-checkbox" id="generate-review-checkbox">
+                Generate Review
+              </label>
+
+              <label for="generate-storyline-checkbox" class="generate-review">
+                <input type="checkbox" name="generate-checkbox" id="generate-storyline-checkbox">
+                Generate Storyline
+              </label>
+            </div>
+
+            <button class="generate-button">
+               Generate
+            </button>
+          </div>
+        </div>
+        <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+      </div>
+    </div>
+    <!--create blog Modal ends here-->
+
+    <!--auto responder Modal -->
+    <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <!-- <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div> -->
+          <div class="modal-body">
+            <h5 style="font-size: 17px; font-weight: 600;">Publish to WordPress</h5>
+
+            <div style="display: flex; align-items: center; gap: 10px; margin-top: 25px;">
+              <button class="publish-website-btn">Website</button>
+              <button class="create-blog-button-icon" style="background-color: #2263DE;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 18 18" fill="none">
+                  <path d="M16.3125 7.3125H10.6875V1.6875C10.6875 1.23995 10.5097 0.810725 10.1932 0.494257C9.87678 0.17779 9.44755 0 9 0C8.55245 0 8.12322 0.17779 7.80676 0.494257C7.49029 0.810725 7.3125 1.23995 7.3125 1.6875V7.3125H1.6875C1.23995 7.3125 0.810725 7.49029 0.494257 7.80676C0.17779 8.12322 0 8.55245 0 9C0 9.44755 0.17779 9.87678 0.494257 10.1932C0.810725 10.5097 1.23995 10.6875 1.6875 10.6875H7.3125V16.3125C7.3125 16.7601 7.49029 17.1893 7.80676 17.5057C8.12322 17.8222 8.55245 18 9 18C9.44755 18 9.87678 17.8222 10.1932 17.5057C10.5097 17.1893 10.6875 16.7601 10.6875 16.3125V10.6875H16.3125C16.7601 10.6875 17.1893 10.5097 17.5057 10.1932C17.8222 9.87678 18 9.44755 18 9C18 8.55245 17.8222 8.12322 17.5057 7.80676C17.1893 7.49029 16.7601 7.3125 16.3125 7.3125Z" fill="white"></path>
+                </svg>
+              </button>
+            </div>
+
+            <div class="social-icons-container">
+              <div class="social-icon-body">
+                <button class="social-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="15" viewBox="0 0 14 22" fill="none">
+                    <path d="M13.3604 1.04923C13.3604 0.895142 13.2987 0.747363 13.189 0.638405C13.0792 0.529447 12.9304 0.468235 12.7751 0.468235H9.84889C8.37537 0.395368 6.9327 0.904438 5.83608 1.88422C4.73946 2.864 4.07806 4.23483 3.99637 5.6972V8.83459H1.07011C0.914897 8.83459 0.766036 8.8958 0.65628 9.00476C0.546524 9.11371 0.484863 9.26149 0.484863 9.41558V12.4368C0.484863 12.5909 0.546524 12.7386 0.65628 12.8476C0.766036 12.9565 0.914897 13.0178 1.07011 13.0178H3.99637V20.8031C3.99637 20.9572 4.05803 21.105 4.16779 21.2139C4.27755 21.3229 4.42641 21.3841 4.58162 21.3841H8.09314C8.24835 21.3841 8.39722 21.3229 8.50697 21.2139C8.61673 21.105 8.67839 20.9572 8.67839 20.8031V13.0178H11.7451C11.8753 13.0196 12.0023 12.9783 12.1062 12.9005C12.2101 12.8226 12.2848 12.7126 12.3187 12.5878L13.1614 9.56664C13.1847 9.4808 13.1878 9.39079 13.1706 9.30355C13.1533 9.21632 13.1161 9.13418 13.0618 9.06347C13.0075 8.99275 12.9376 8.93534 12.8575 8.89566C12.7774 8.85598 12.6891 8.83508 12.5996 8.83459H8.67839V5.6972C8.7075 5.40958 8.84356 5.14306 9.06 4.94969C9.27644 4.75631 9.55771 4.64996 9.84889 4.65141H12.7751C12.9304 4.65141 13.0792 4.5902 13.189 4.48124C13.2987 4.37228 13.3604 4.2245 13.3604 4.07041V1.04923Z" fill="#638BFF"/>
+                  </svg>
+                </button>
+                <h5>Facebook</h5>
+              </div>
+
+              <div class="social-icon-body">
+                <button class="social-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 21 22" fill="none">
+                    <path d="M12.4723 9.32065L19.9613 0.461365H18.1863L11.6854 8.15346L6.49059 0.461365H0.5L8.35433 12.0944L0.5 21.3841H2.27499L9.14124 13.2601L14.6274 21.3841H20.618L12.4723 9.32065ZM10.042 12.196L9.24626 11.0378L2.91399 1.82134H5.64007L10.7491 9.25938L11.5449 10.4176L18.1878 20.0869H15.4617L10.042 12.196Z" fill="black"/>
+                  </svg>
+                </button>
+                <h5>Twitter (X)</h5>
+              </div>
+
+              <div class="social-icon-body">
+                <button class="social-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 21 20" fill="none">
+                    <path d="M4.40714 2.22321C4.40684 2.81255 4.1744 3.37763 3.76095 3.79415C3.34749 4.21066 2.78689 4.44449 2.20247 4.4442C1.61804 4.4439 1.05767 4.20951 0.644631 3.79257C0.231589 3.37564 -0.000291935 2.81033 2.75844e-07 2.22099C0.000292487 1.63165 0.232734 1.06657 0.646189 0.650052C1.05965 0.233536 1.62025 -0.00029439 2.20467 2.78164e-07C2.78909 0.000294947 3.34946 0.234691 3.7625 0.651623C4.17555 1.06856 4.40743 1.63387 4.40714 2.22321ZM4.47324 6.08966H0.0661072V20H4.47324V6.08966ZM11.4365 6.08966H7.05142V20H11.3924V12.7004C11.3924 8.63397 16.648 8.25621 16.648 12.7004V20H21V11.1894C21 4.3342 13.2214 4.58975 11.3924 7.95622L11.4365 6.08966Z" fill="#638BFF"/>
+                  </svg>
+                </button>
+                <h5>LinkedIn</h5>
+              </div>
+
+              <div class="social-icon-body">
+                <button class="social-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 20 19" fill="none">
+                    <path d="M15.25 0H4.75C3.49022 0 2.28204 0.500445 1.39124 1.39124C0.500445 2.28204 0 3.49022 0 4.75V13.75C0 14.3738 0.122862 14.9915 0.361572 15.5677C0.600282 16.144 0.950164 16.6677 1.39124 17.1088C2.28204 17.9996 3.49022 18.5 4.75 18.5H15.25C16.509 18.4974 17.7156 17.9961 18.6058 17.1058C19.4961 16.2156 19.9974 15.009 20 13.75V4.75C19.9974 3.49103 19.4961 2.28439 18.6058 1.39416C17.7156 0.503936 16.509 0.00264212 15.25 0ZM11.6 8.32C11.108 8.60059 10.5514 8.74815 9.985 8.74815C9.41861 8.74815 8.862 8.60059 8.37 8.32L1.52 4.39C1.60857 3.5953 1.98701 2.86115 2.58292 2.32797C3.17883 1.79478 3.95038 1.5 4.75 1.5H15.25C16.049 1.50219 16.8194 1.79773 17.4148 2.3305C18.0103 2.86327 18.3893 3.59616 18.48 4.39L11.6 8.32Z" fill="#638BFF"/>
+                  </svg>
+                </button>
+                <h5>Email</h5>
+              </div>
+
+              <div class="social-icon-body">
+                <button class="social-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 22 22" fill="none">
+                    <path d="M0 10.9999C0 15.5041 2.70857 19.3736 6.58442 21.0748C6.55348 20.3067 6.57892 19.3847 6.77589 18.5489C6.98738 17.656 8.19127 12.5551 8.19127 12.5551C8.19127 12.5551 7.83988 11.8528 7.83988 10.8148C7.83988 9.18466 8.78467 7.96722 9.96132 7.96722C10.9619 7.96722 11.4453 8.71872 11.4453 9.61864C11.4453 10.6244 10.8038 12.1289 10.4738 13.5223C10.1982 14.6892 11.0589 15.6409 12.21 15.6409C14.2942 15.6409 15.6979 12.9641 15.6979 9.79257C15.6979 7.38174 14.0741 5.57728 11.1207 5.57728C7.78393 5.57728 5.7052 8.06562 5.7052 10.8451C5.7052 11.8035 5.98776 12.4792 6.43033 13.0026C6.63383 13.243 6.66211 13.3396 6.58846 13.6157C6.53569 13.818 6.41452 14.3053 6.36433 14.4984C6.29112 14.777 6.06536 14.8766 5.81356 14.7737C4.27666 14.1463 3.56089 12.4633 3.56089 10.5713C3.56089 7.44662 6.19624 3.69985 11.4226 3.69985C15.6223 3.69985 18.3865 6.73886 18.3865 10.001C18.3865 14.3161 15.9875 17.5398 12.4512 17.5398C11.2636 17.5398 10.1465 16.8979 9.76384 16.1687C9.76384 16.1687 9.12524 18.7031 8.98997 19.1925C8.75674 20.0406 8.30024 20.8883 7.88284 21.5489C8.89498 21.8482 9.94494 22.0001 11.0004 22C17.0748 22 22 17.0751 22 10.9999C22 4.92486 17.0748 0 11.0004 0C4.9254 0 0 4.92486 0 10.9999Z" fill="#CB1F27"/>
+                  </svg>
+                </button>
+                <h5>Pinterest</h5>
+              </div>
+            </div>
+            
+            <div class="wordpress-url-container">
+              <button class="wordpress-url-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="11" height="13" viewBox="0 0 11 14" fill="none">
+                  <path d="M1.03331 1.83853L1.03125 3.32434V10.6757C1.03125 11.2789 1.26666 11.8575 1.68568 12.284C2.10471 12.7106 2.67303 12.9502 3.26562 12.9502H9.18912C9.08247 13.2573 8.88489 13.5232 8.62362 13.7112C8.36234 13.8992 8.05022 14.0001 7.73025 14H3.26562C2.39953 14 1.5689 13.6498 0.95648 13.0263C0.344056 12.4029 0 11.5573 0 10.6757V3.32434C0 2.63847 0.431062 2.05409 1.03331 1.83853ZM9.45312 0C9.65626 0 9.85741 0.0407305 10.0451 0.119866C10.2328 0.199001 10.4033 0.314992 10.5469 0.461215C10.6906 0.607438 10.8045 0.78103 10.8823 0.972079C10.96 1.16313 11 1.36789 11 1.57469V10.6729C11 10.8797 10.96 11.0844 10.8823 11.2755C10.8045 11.4665 10.6906 11.6401 10.5469 11.7863C10.4033 11.9326 10.2328 12.0485 10.0451 12.1277C9.85741 12.2068 9.65626 12.2476 9.45312 12.2476H3.26562C2.85537 12.2476 2.46191 12.0816 2.17182 11.7863C1.88172 11.491 1.71875 11.0905 1.71875 10.6729V1.57469C1.71875 1.15705 1.88172 0.756525 2.17182 0.461215C2.46191 0.165904 2.85537 0 3.26562 0H9.45312ZM9.45312 1.04979H3.26562C3.12887 1.04979 2.99772 1.10509 2.90102 1.20353C2.80432 1.30197 2.75 1.43547 2.75 1.57469V10.6729C2.75 10.9626 2.981 11.1978 3.26562 11.1978H9.45312C9.58988 11.1978 9.72103 11.1425 9.81773 11.044C9.91443 10.9456 9.96875 10.8121 9.96875 10.6729V1.57469C9.96875 1.43547 9.91443 1.30197 9.81773 1.20353C9.72103 1.10509 9.58988 1.04979 9.45312 1.04979Z" fill="white"></path>
+                </svg>
+                Copy
+              </button>
+              <div style=" width: 60%; outline: none;" contenteditable="true">
+                https:// www.dutiesandyourdemolinkhere
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+      </div>
+    </div>
+    <!--auto responder Modal ends here-->
+
+
+    <!-- header -->
+    <header>
+        <div class="app-logo">
+          LOGO HERE
+        </div>
+
+        <div class="nav-links-container">
+          <div class="nav-links">
+            <a href="#">Feature/Blog Report</a>
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Integration
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  Auto-Responder
+                </li>
+                <li  data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                  Wordpress
+                </li>
+              </ul>
+            </div>
+
+            <a href="#">Stats</a>
+            <a href="#">Academy</a>
+            <a href="#">Reseller</a>
+
+            <button class="bg-primary upgrade-btn">Upgrade</button>
+          </div>
+
+          <div class="acount-display-body">
+              <div class="acount-display-img">
+              <img src="images/saka-img.jpeg" class="img">
+              </div>
+              My Account
+          </div>
+
+          <button class="menu-bar">
+              <svg xmlns="http://www.w3.org/2000/svg" class="open-nav-icon" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="close-nav-icon" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+          </button>
+        </div>
+    </header>
+    <!-- header ends here-->
+
+    <!-- main -->
+    <div class="main-container">
+      <!--  user reaction cards  -->
+      <div class="container-fluid" style="padding: 0 0; margin-top: 10px;">
+        <div class="row g-4">
+          <div class="col-xl-3 col-lg-6 col-sm-12 home-card-parent">
+            <div class="user-reaction-card">
+              <div class="user-reaction-card-content">
+                <h4>07</h4>
+                <p>Number of Projects</p>
+              </div>
+              <div class="user-reaction-card-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 49 62" fill="none">
+                    <path d="M8.9447 61.0137H39.2506C45.1584 61.0137 48.0977 58.0262 48.0977 52.1083V26.2746C48.0977 22.6037 47.6983 21.011 45.4153 18.6779L29.6621 2.7171C27.4947 0.496816 25.7244 0.0136719 22.5002 0.0136719H8.9447C3.06615 0.0136719 0.0976562 3.02907 0.0976562 8.9482V52.1083C0.0976562 58.0541 3.06615 61.0137 8.9447 61.0137ZM9.17239 56.4335C6.23311 56.4335 4.69164 54.8675 4.69164 52.0233V9.03317C4.69164 6.21686 6.23311 4.59383 9.20161 4.59383H21.8719V21.1251C21.8719 24.7099 23.6983 26.4737 27.2366 26.4737H43.5037V52.0233C43.5037 54.8675 41.9902 56.4335 39.0229 56.4335H9.17239ZM27.7504 22.1764C26.6376 22.1764 26.1797 21.7224 26.1797 20.5837V5.47636L42.6173 22.1776L27.7504 22.1764Z" fill="white" fill-opacity="0.7"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-lg-6 col-sm-12 home-card-parent">
+            <div class="user-reaction-card total-visitors">
+              <div class="user-reaction-card-content">
+                <h4>20,89</h4>
+                <p>Number of Projects</p>
+              </div>
+              <div class="user-reaction-card-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="35" viewBox="0 0 55 52" fill="none">
+                  <path d="M27.5 3.42105C26.868 3.42105 26.2422 3.54494 25.6583 3.78563C25.0745 4.02632 24.5439 4.37911 24.097 4.82386C23.6502 5.2686 23.2957 5.79659 23.0538 6.37767C22.812 6.95876 22.6875 7.58156 22.6875 8.21053C22.6875 8.83949 22.812 9.46229 23.0538 10.0434C23.2957 10.6245 23.6502 11.1525 24.097 11.5972C24.5439 12.0419 25.0745 12.3947 25.6583 12.6354C26.2422 12.8761 26.868 13 27.5 13C28.7764 13 30.0004 12.4954 30.903 11.5972C31.8055 10.699 32.3125 9.48077 32.3125 8.21053C32.3125 6.94028 31.8055 5.72206 30.903 4.82386C30.0004 3.92566 28.7764 3.42105 27.5 3.42105ZM19.25 8.21053C19.25 6.03296 20.1192 3.94458 21.6664 2.40481C23.2135 0.865035 25.312 0 27.5 0C29.688 0 31.7865 0.865035 33.3336 2.40481C34.8808 3.94458 35.75 6.03296 35.75 8.21053C35.75 10.3881 34.8808 12.4765 33.3336 14.0162C31.7865 15.556 29.688 16.4211 27.5 16.4211C25.312 16.4211 23.2135 15.556 21.6664 14.0162C20.1192 12.4765 19.25 10.3881 19.25 8.21053ZM45.375 6.1579C44.4633 6.1579 43.589 6.51833 42.9443 7.1599C42.2997 7.80147 41.9375 8.67163 41.9375 9.57895C41.9375 10.4863 42.2997 11.3564 42.9443 11.998C43.589 12.6396 44.4633 13 45.375 13C46.2867 13 47.161 12.6396 47.8057 11.998C48.4503 11.3564 48.8125 10.4863 48.8125 9.57895C48.8125 8.67163 48.4503 7.80147 47.8057 7.1599C47.161 6.51833 46.2867 6.1579 45.375 6.1579ZM38.5 9.57895C38.5 7.76431 39.2243 6.02399 40.5136 4.74085C41.803 3.4577 43.5516 2.73684 45.375 2.73684C47.1984 2.73684 48.947 3.4577 50.2364 4.74085C51.5257 6.02399 52.25 7.76431 52.25 9.57895C52.25 11.3936 51.5257 13.1339 50.2364 14.417C48.947 15.7002 47.1984 16.4211 45.375 16.4211C43.5516 16.4211 41.803 15.7002 40.5136 14.417C39.2243 13.1339 38.5 11.3936 38.5 9.57895ZM6.1875 9.57895C6.1875 8.67163 6.54966 7.80147 7.19432 7.1599C7.83898 6.51833 8.71332 6.15789 9.625 6.1579C10.5367 6.15789 11.411 6.51833 12.0557 7.1599C12.7003 7.80147 13.0625 8.67163 13.0625 9.57895C13.0625 10.4863 12.7003 11.3564 12.0557 11.998C11.411 12.6396 10.5367 13 9.625 13C8.71332 13 7.83898 12.6396 7.19432 11.998C6.54966 11.3564 6.1875 10.4863 6.1875 9.57895ZM9.625 2.73684C7.80164 2.73684 6.05295 3.4577 4.76364 4.74085C3.47433 6.02399 2.75 7.76431 2.75 9.57895C2.75 11.3936 3.47433 13.1339 4.76364 14.417C6.05295 15.7002 7.80164 16.4211 9.625 16.4211C11.4484 16.4211 13.197 15.7002 14.4864 14.417C15.7757 13.1339 16.5 11.3936 16.5 9.57895C16.5 7.76431 15.7757 6.02399 14.4864 4.74085C13.197 3.4577 11.4484 2.73684 9.625 2.73684ZM15.125 24.9737C15.125 23.4312 15.7407 21.952 16.8366 20.8613C17.9325 19.7706 19.4189 19.1579 20.9688 19.1579H34.0312C35.5811 19.1579 37.0675 19.7706 38.1634 20.8613C39.2593 21.952 39.875 23.4312 39.875 24.9737V39.6842C39.875 42.9506 38.5712 46.0831 36.2504 48.3928C33.9297 50.7024 30.7821 52 27.5 52C24.2179 52 21.0703 50.7024 18.7496 48.3928C16.4288 46.0831 15.125 42.9506 15.125 39.6842V24.9737ZM27.5 48.5789C29.8704 48.5789 32.1437 47.6418 33.8198 45.9737C35.4959 44.3057 36.4375 42.0432 36.4375 39.6842V24.9737C36.4375 24.3386 36.184 23.7295 35.7327 23.2804C35.2815 22.8313 34.6694 22.5789 34.0312 22.5789H20.9688C20.3306 22.5789 19.7185 22.8313 19.2673 23.2804C18.816 23.7295 18.5625 24.3386 18.5625 24.9737V39.6842C18.5625 42.0432 19.5041 44.3057 21.1802 45.9737C22.8563 47.6418 25.1296 48.5789 27.5 48.5789ZM9.625 44.4737C10.7746 44.474 11.9017 44.1556 12.8796 43.5541C13.1807 44.6844 13.6111 45.7614 14.1529 46.7699C12.6862 47.548 11.0421 47.9349 9.38055 47.8929C7.71903 47.8509 6.09675 47.3814 4.67168 46.5302C3.24661 45.6789 2.06732 44.4749 1.24864 43.0354C0.429953 41.5959 -0.000221485 39.9699 1.61779e-07 38.3158V24.9751C-0.000180433 24.2112 0.15084 23.4548 0.444435 22.749C0.73803 22.0433 1.16845 21.402 1.71111 20.8618C2.25377 20.3216 2.89804 19.8931 3.60713 19.6007C4.31621 19.3084 5.07622 19.1579 5.84375 19.1579H13.4062C13.8032 19.1588 14.1886 19.1967 14.5626 19.2715C13.7063 20.2227 13.0753 21.3529 12.716 22.5789H5.84375C5.20557 22.5789 4.59353 22.8313 4.14227 23.2804C3.69102 23.7295 3.4375 24.3386 3.4375 24.9737V38.3158C3.4375 39.949 4.0894 41.5153 5.24978 42.6701C6.41016 43.8249 7.98397 44.4737 9.625 44.4737ZM45.375 47.8947C43.796 47.8956 42.241 47.5097 40.8471 46.7713C41.3889 45.7614 41.8192 44.6844 42.1204 43.5541C43.0577 44.131 44.1329 44.4484 45.2347 44.4732C46.3366 44.4981 47.4251 44.2296 48.3877 43.6956C49.3504 43.1615 50.1522 42.3812 50.7104 41.4354C51.2685 40.4896 51.5627 39.4126 51.5625 38.3158V24.9737C51.5625 24.3386 51.309 23.7295 50.8577 23.2804C50.4065 22.8313 49.7944 22.5789 49.1562 22.5789H42.284C41.9243 21.3528 41.2928 20.2225 40.436 19.2715C40.8118 19.1967 41.1978 19.1588 41.5938 19.1579H49.1562C50.7061 19.1579 52.1925 19.7706 53.2884 20.8613C54.3843 21.952 55 23.4312 55 24.9737V38.3158C55 40.8563 53.9859 43.2927 52.1809 45.0891C50.3759 46.8855 47.9277 47.8947 45.375 47.8947Z" fill="white" fill-opacity="0.7"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-lg-6 col-sm-12 home-card-parent">
+            <div class="user-reaction-card number-of-clicks">
+              <div class="user-reaction-card-content">
+                <h4>07</h4>
+                <p>Number of Projects</p>
+              </div>
+              <div class="user-reaction-card-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="45" height="35" viewBox="0 0 52 60" fill="none">
+                  <path d="M20.2535 0C20.7418 0 21.2102 0.195461 21.5555 0.543383C21.9008 0.891305 22.0947 1.36319 22.0947 1.85522V9.27612C22.0947 9.76815 21.9008 10.24 21.5555 10.588C21.2102 10.9359 20.7418 11.1313 20.2535 11.1313C19.7652 11.1313 19.2969 10.9359 18.9516 10.588C18.6063 10.24 18.4123 9.76815 18.4123 9.27612V1.85522C18.4123 1.36319 18.6063 0.891305 18.9516 0.543383C19.2969 0.195461 19.7652 0 20.2535 0ZM5.92876 5.97382C6.09979 5.80105 6.30297 5.66398 6.52666 5.57045C6.75035 5.47692 6.99016 5.42878 7.23235 5.42878C7.47453 5.42878 7.71434 5.47692 7.93803 5.57045C8.16172 5.66398 8.3649 5.80105 8.53594 5.97382L13.7429 11.2241C13.9188 11.3952 14.0591 11.6 14.1556 11.8263C14.2521 12.0526 14.3028 12.2961 14.305 12.5424C14.3071 12.7888 14.2605 13.0331 14.1679 13.2611C14.0753 13.4891 13.9386 13.6962 13.7658 13.8704C13.5929 14.0446 13.3873 14.1823 13.161 14.2756C12.9347 14.3689 12.6923 14.4158 12.4478 14.4137C12.2033 14.4116 11.9617 14.3604 11.7371 14.2631C11.5125 14.1659 11.3093 14.0246 11.1394 13.8474L5.93244 8.60082C5.58726 8.25291 5.39335 7.78111 5.39335 7.28917C5.39335 6.79723 5.58726 6.32544 5.93244 5.97753M34.582 5.97753C34.7534 6.14987 34.8895 6.35459 34.9823 6.57998C35.0751 6.80537 35.1229 7.047 35.1229 7.29103C35.1229 7.53505 35.0751 7.77668 34.9823 8.00208C34.8895 8.22747 34.7534 8.43219 34.582 8.60453L29.3639 13.8474C29.1941 14.0246 28.9909 14.1659 28.7663 14.2631C28.5416 14.3604 28.3 14.4116 28.0555 14.4137C27.8111 14.4158 27.5686 14.3689 27.3423 14.2756C27.1161 14.1823 26.9105 14.0446 26.7376 13.8704C26.5647 13.6962 26.428 13.4891 26.3354 13.2611C26.2428 13.0331 26.1963 12.7888 26.1984 12.5424C26.2005 12.2961 26.2513 12.0526 26.3478 11.8263C26.4443 11.6 26.5846 11.3952 26.7604 11.2241L31.9674 5.97753C32.3127 5.62973 32.7809 5.43435 33.2692 5.43435C33.7574 5.43435 34.2256 5.62973 34.5709 5.97753M0 20.4075C0 19.9154 0.193986 19.4435 0.539284 19.0956C0.884581 18.7477 1.3529 18.5522 1.84123 18.5522H9.20614C9.69447 18.5522 10.1628 18.7477 10.5081 19.0956C10.8534 19.4435 11.0474 19.9154 11.0474 20.4075C11.0474 20.8995 10.8534 21.3714 10.5081 21.7193C10.1628 22.0672 9.69447 22.2627 9.20614 22.2627H1.84123C1.3529 22.2627 0.884581 22.0672 0.539284 21.7193C0.193986 21.3714 0 20.8995 0 20.4075ZM24.4515 19.6654C23.9141 19.2143 23.2603 18.9269 22.5667 18.8365C21.8731 18.7462 21.1682 18.8568 20.5347 19.1553C19.9012 19.4539 19.3651 19.9281 18.9892 20.5224C18.6134 21.1167 18.4132 21.8066 18.4123 22.5113V56.2801C18.4123 59.7085 22.6287 61.304 24.8676 58.7253L32.3283 50.1319C32.8472 49.5356 33.4866 49.058 34.2036 48.731C34.9206 48.404 35.6987 48.2352 36.4858 48.2358H48.3102C51.7533 48.2358 53.3146 43.8946 50.6669 41.6757L24.4515 19.6654ZM22.0947 56.2875V22.5113L48.3102 44.5254H36.4858C35.1732 44.5252 33.8757 44.8078 32.6804 45.3544C31.4851 45.9009 30.4196 46.6986 29.5554 47.6941L22.0947 56.2875Z" fill="white" fill-opacity="0.7"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-lg-6 col-sm-12 home-card-parent">
+            <div class="user-reaction-card number-of-leads">
+              <div class="user-reaction-card-content">
+                <h4>500,00</h4>
+                <p>Number of Projects</p>
+              </div>
+              <div class="user-reaction-card-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="30" viewBox="0 0 68 63" fill="none">
+                  <path d="M52.554 1.97296H15.9459C8.24381 1.97296 2 8.21677 2 15.9189V47.2973C2 54.9994 8.24381 61.2432 15.9459 61.2432H52.554C60.2562 61.2432 66.5 54.9994 66.5 47.2973V15.9189C66.5 8.21677 60.2562 1.97296 52.554 1.97296Z" stroke="white" stroke-opacity="0.7" stroke-width="3"/>
+                  <path d="M2.16385 16.2327L27.284 30.6319C29.3886 31.8548 31.7793 32.4989 34.2134 32.4989C36.6474 32.4989 39.0382 31.8548 41.1428 30.6319L66.3326 16.2327" stroke="white" stroke-opacity="0.7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- user reaction cards ends here -->
+
+      <!-- search section -->
+      <div class="filter-and-search-container">
+        <section class="d-flex align-items-center gap-3 ">
+            <div class="date_filter d-flex flex-column">
+                <label for="" class="label">Date</label>
+                <input type="date" class="input">
+            </div>
+            <div class="project_name d-flex flex-column">
+                 <label for="" class="label">Project Name</label>
+                <div class="input d-flex align-items-center">
+                    <label for="nameInput">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 28" fill="none">
+<path d="M19 7C19 8.85652 18.2625 10.637 16.9497 11.9497C15.637 13.2625 13.8565 14 12 14C10.1435 14 8.36301 13.2625 7.05025 11.9497C5.7375 10.637 5 8.85652 5 7C5 5.14348 5.7375 3.36301 7.05025 2.05025C8.36301 0.737498 10.1435 0 12 0C13.8565 0 15.637 0.737498 16.9497 2.05025C18.2625 3.36301 19 5.14348 19 7ZM17 7C17 5.67392 16.4732 4.40215 15.5355 3.46447C14.5979 2.52678 13.3261 2 12 2C10.6739 2 9.40215 2.52678 8.46447 3.46447C7.52678 4.40215 7 5.67392 7 7C7 8.32608 7.52678 9.59785 8.46447 10.5355C9.40215 11.4732 10.6739 12 12 12C13.3261 12 14.5979 11.4732 15.5355 10.5355C16.4732 9.59785 17 8.32608 17 7ZM3.5 16C2.57174 16 1.6815 16.3687 1.02513 17.0251C0.368749 17.6815 0 18.5717 0 19.5V20C0 22.393 1.523 24.417 3.685 25.793C5.859 27.177 8.802 28 12 28C15.198 28 18.14 27.177 20.315 25.793C22.477 24.417 24 22.393 24 20V19.5C24 18.5717 23.6313 17.6815 22.9749 17.0251C22.3185 16.3687 21.4283 16 20.5 16H3.5ZM2 19.5C2 19.1022 2.15804 18.7206 2.43934 18.4393C2.72064 18.158 3.10218 18 3.5 18H20.5C20.8978 18 21.2794 18.158 21.5607 18.4393C21.842 18.7206 22 19.1022 22 19.5V20C22 21.473 21.06 22.949 19.241 24.106C17.434 25.256 14.877 26 12 26C9.123 26 6.566 25.256 4.759 24.106C2.939 22.95 2 21.472 2 20V19.5Z" fill="#9D9D9D"/>
+</svg>
+                    </label>
+               
+                <input type="text" class="" id="nameInput">
+                </div>
+            </div>
+        </section>
+
+        <div class="filter-search-input">
+          <input type="text" name="" id="" placeholder="Search">
+          <svg width="18px" height="18px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#8c8c8c" style="left: 10px;"><g stroke-width="0"></g> <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g> <g><path d="M15.7955 15.8111L21 21M18 10.5C18 14.6421 14.6421 18 10.5 18C6.35786 18 3 14.6421 3 10.5C3 6.35786 6.35786 3 10.5 3C14.6421 3 18 6.35786 18 10.5Z" stroke="#8c8c8c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g></svg>
+        </div>
+      </div>
+      <!-- search section ends here-->
+
+      <div class="container-fluid" style="padding: 0 0;">
+        <div class="row g-5">
+        
+            <!-- countries -->
+          <div class="col-xl-4 col-lg-4 col-sm-4">
+            <div class="created-blogs-container analytics">
+             
+              <h6 class="mb-3">Countries</h6>
+              <div class="analytics-container custom-scrollbar mt-3">
+                <div class="analytic-item d-flex flex-column gap-1">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <span class="icon">
+                        <img src="/images/usaFlag.png" alt="">
+                        <span>United States</span>
+                    </span>
+                    <span>10%</span>
+                    <h6>15</h6>
+
+                    </div>
+                    <div class="progress-bar">
+                        <span class="progress-bar-indicator" style="  width: 10%;"></span>
+                    </div>
+
+                </div>
+
+                <div class="analytic-item d-flex flex-column gap-1">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <span class="icon">
+                        <img src="/images/usaFlag.png" alt="">
+                        <span>United States</span>
+                    </span>
+                    <span>30%</span>
+                    <h6>25</h6>
+
+                    </div>
+                    <div class="progress-bar">
+                        <span class="progress-bar-indicator" style="  width: 30%;"></span>
+                    </div>
+
+                </div>
+
+                   <div class="analytic-item d-flex flex-column gap-1">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <span class="icon">
+                        <img src="/images/usaFlag.png" alt="">
+                        <span>United States</span>
+                    </span>
+                    <span>30%</span>
+                    <h6>25</h6>
+
+                    </div>
+                    <div class="progress-bar">
+                        <span class="progress-bar-indicator" style="  width: 30%;"></span>
+                    </div>
+
+                  </div>
+
+                 <div class="analytic-item d-flex flex-column gap-1">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <span class="icon">
+                        <img src="/images/usaFlag.png" alt="">
+                        <span>United States</span>
+                    </span>
+                    <span>30%</span>
+                    <h6>25</h6>
+
+                    </div>
+                    <div class="progress-bar">
+                        <span class="progress-bar-indicator" style="  width: 30%;"></span>
+                    </div>
+
+                </div>
+
+
+                <div class="analytic-item d-flex flex-column gap-1">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <span class="icon">
+                        <img src="/images/usaFlag.png" alt="">
+                        <span>United States</span>
+                    </span>
+                    <span>30%</span>
+                    <h6>25</h6>
+
+                    </div>
+                    <div class="progress-bar">
+                        <span class="progress-bar-indicator" style="  width: 30%;"></span>
+                    </div>
+
+                </div>
+              </div>
+
+             
+
+             
+            </div>
+          </div>
+
+          <!-- referrers -->
+           <div class="col-xl-4 col-lg-4 col-sm-4">
+            <div class="created-blogs-container analytics">
+             
+              <h6 class="mb-3">Referrers</h6>
+              <div class="analytics-container custom-scrollbar mt-3">
+                <div class="analytic-item d-flex flex-column gap-1">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <span class="icon">
+                        <img src="/images/usaFlag.png" alt="">
+                        <span>United States</span>
+                    </span>
+                    <span>10%</span>
+                    <h6>15</h6>
+
+                    </div>
+                    <div class="progress-bar">
+                        <span class="progress-bar-indicator" style="  width: 10%;"></span>
+                    </div>
+
+                </div>
+
+                <div class="analytic-item d-flex flex-column gap-1">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <span class="icon">
+                        <img src="/images/usaFlag.png" alt="">
+                        <span>United States</span>
+                    </span>
+                    <span>30%</span>
+                    <h6>25</h6>
+
+                    </div>
+                    <div class="progress-bar">
+                        <span class="progress-bar-indicator" style="  width: 30%;"></span>
+                    </div>
+
+                </div>
+
+                   <div class="analytic-item d-flex flex-column gap-1">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <span class="icon">
+                        <img src="/images/usaFlag.png" alt="">
+                        <span>United States</span>
+                    </span>
+                    <span>30%</span>
+                    <h6>25</h6>
+
+                    </div>
+                    <div class="progress-bar">
+                        <span class="progress-bar-indicator" style="  width: 30%;"></span>
+                    </div>
+
+                  </div>
+
+                
+              </div>
+
+             
+
+             
+            </div>
+          </div>
+
+          <!-- devices -->
+            <div class="col-xl-4 col-lg-4 col-sm-4">
+                <div class="created-blogs-container analytics">
+                
+                <h6 class="mb-3">Devices</h6>
+                <div class="analytics-container custom-scrollbar mt-3">
+                    <div class="analytic-item d-flex flex-column gap-1">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <span class="icon">
+                            <img src="/images/usaFlag.png" alt="">
+                            <span>United States</span>
+                        </span>
+                        <span>10%</span>
+                        <h6>15</h6>
+
+                        </div>
+                        <div class="progress-bar">
+                            <span class="progress-bar-indicator" style="  width: 10%;"></span>
+                        </div>
+
+                    </div>
+
+                    <div class="analytic-item d-flex flex-column gap-1">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <span class="icon">
+                            <img src="/images/usaFlag.png" alt="">
+                            <span>United States</span>
+                        </span>
+                        <span>30%</span>
+                        <h6>25</h6>
+
+                        </div>
+                        <div class="progress-bar">
+                            <span class="progress-bar-indicator" style="  width: 30%;"></span>
+                        </div>
+
+                    </div>
+
+                    <div class="analytic-item d-flex flex-column gap-1">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <span class="icon">
+                            <img src="/images/usaFlag.png" alt="">
+                            <span>United States</span>
+                        </span>
+                        <span>30%</span>
+                        <h6>25</h6>
+
+                        </div>
+                        <div class="progress-bar">
+                            <span class="progress-bar-indicator" style="  width: 30%;"></span>
+                        </div>
+
+                    </div>
+
+                    
+                </div>
+
+                
+
+                
+                </div>
+             </div>
+
+             <!-- operating system -->
+               <div class="col-xl-4 col-lg-4 col-sm-4">
+                <div class="created-blogs-container analytics">
+                
+                <h6 class="mb-3">Operating System</h6>
+                <div class="analytics-container custom-scrollbar mt-3">
+                    <div class="analytic-item d-flex flex-column gap-1">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <span class="icon">
+                            <img src="/images/usaFlag.png" alt="">
+                            <span>United States</span>
+                        </span>
+                        <span>10%</span>
+                        <h6>15</h6>
+
+                        </div>
+                        <div class="progress-bar">
+                            <span class="progress-bar-indicator" style="  width: 10%;"></span>
+                        </div>
+
+                    </div>
+
+                    <div class="analytic-item d-flex flex-column gap-1">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <span class="icon">
+                            <img src="/images/usaFlag.png" alt="">
+                            <span>United States</span>
+                        </span>
+                        <span>30%</span>
+                        <h6>25</h6>
+
+                        </div>
+                        <div class="progress-bar">
+                            <span class="progress-bar-indicator" style="  width: 30%;"></span>
+                        </div>
+
+                    </div>
+
+                    <div class="analytic-item d-flex flex-column gap-1">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <span class="icon">
+                            <img src="/images/usaFlag.png" alt="">
+                            <span>United States</span>
+                        </span>
+                        <span>30%</span>
+                        <h6>25</h6>
+
+                        </div>
+                        <div class="progress-bar">
+                            <span class="progress-bar-indicator" style="  width: 30%;"></span>
+                        </div>
+
+                    </div>
+
+                    
+                </div>
+
+                
+
+                
+                </div>
+             </div>
+
+
+             <!-- Browsers -->
+               <div class="col-xl-4 col-lg-4 col-sm-4">
+                <div class="created-blogs-container analytics">
+                
+                    <h6 class="mb-3">Browsers</h6>
+                    <div class="analytics-container custom-scrollbar mt-3">
+                        <div class="analytic-item d-flex flex-column gap-1">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <span class="icon">
+                                <img src="/images/usaFlag.png" alt="">
+                                <span>United States</span>
+                            </span>
+                            <span>10%</span>
+                            <h6>15</h6>
+
+                            </div>
+                            <div class="progress-bar">
+                                <span class="progress-bar-indicator" style="  width: 10%;"></span>
+                            </div>
+
+                        </div>
+
+                        <div class="analytic-item d-flex flex-column gap-1">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <span class="icon">
+                                <img src="/images/usaFlag.png" alt="">
+                                <span>United States</span>
+                            </span>
+                            <span>30%</span>
+                            <h6>25</h6>
+
+                            </div>
+                            <div class="progress-bar">
+                                <span class="progress-bar-indicator" style="  width: 30%;"></span>
+                            </div>
+
+                        </div>
+
+                        <div class="analytic-item d-flex flex-column gap-1">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <span class="icon">
+                                <img src="/images/usaFlag.png" alt="">
+                                <span>United States</span>
+                            </span>
+                            <span>30%</span>
+                            <h6>25</h6>
+
+                            </div>
+                            <div class="progress-bar">
+                                <span class="progress-bar-indicator" style="  width: 30%;"></span>
+                            </div>
+
+                        </div>
+
+                        
+                    </div>    
+              </div>
+              </div>
+
+              <!-- langauges -->
+                <div class="col-xl-4 col-lg-4 col-sm-4">
+                <div class="created-blogs-container analytics">
+                
+                    <h6 class="mb-3">Languages</h6>
+                    <div class="analytics-container custom-scrollbar mt-3">
+                        <div class="analytic-item d-flex flex-column gap-1">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <span class="icon">
+                                <img src="/images/usaFlag.png" alt="">
+                                <span>United States</span>
+                            </span>
+                            <span>10%</span>
+                            <h6>15</h6>
+
+                            </div>
+                            <div class="progress-bar">
+                                <span class="progress-bar-indicator" style="  width: 10%;"></span>
+                            </div>
+
+                        </div>
+
+                        <div class="analytic-item d-flex flex-column gap-1">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <span class="icon">
+                                <img src="/images/usaFlag.png" alt="">
+                                <span>United States</span>
+                            </span>
+                            <span>30%</span>
+                            <h6>25</h6>
+
+                            </div>
+                            <div class="progress-bar">
+                                <span class="progress-bar-indicator" style="  width: 30%;"></span>
+                            </div>
+
+                        </div>
+
+                        <div class="analytic-item d-flex flex-column gap-1">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <span class="icon">
+                                <img src="/images/usaFlag.png" alt="">
+                                <span>United States</span>
+                            </span>
+                            <span>30%</span>
+                            <h6>25</h6>
+
+                            </div>
+                            <div class="progress-bar">
+                                <span class="progress-bar-indicator" style="  width: 30%;"></span>
+                            </div>
+
+                        </div>
+
+                        
+                    </div>    
+              </div>
+              </div>
+      </div>
+
+      <!-- leads -->
+       <section class="lead-section mt-5">
+        <div class="d-flex align-items-center w-100 justify-content-between">
+            <span class="d-flex align-items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 21 19" fill="none">
+                <path d="M8 0C10.2 0 12 1.8 12 4C12 6.2 10.2 8 8 8C5.8 8 4 6.2 4 4C4 1.8 5.8 0 8 0ZM15 17L16.8 18.77C17.3 19.27 18 18.87 18 18.28V14L20.8 10.6C20.9114 10.4514 20.9793 10.2748 20.996 10.0898C21.0126 9.90484 20.9775 9.71889 20.8944 9.55279C20.8114 9.38668 20.6837 9.24698 20.5257 9.14935C20.3678 9.05171 20.1857 9 20 9H13C12.2 9 11.7 10 12.2 10.6L15 14V17ZM13 14.7L10.7 11.9C10.3 11.4 10.1 10.8 10.1 10.2C9.4 10 8.7 10 8 10C3.6 10 0 11.8 0 14V16H13V14.7Z" fill="#00103E"/>
+                </svg>
+                <h5 style="color: #00103e;">LEADS</h5>
+            </span>
+            <button class="d-flex align-items-center gap-2">
+                <span class="svg-wrapper">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 18" fill="none">
+                        <path d="M15 6H11V0H5V6H1L8 14L15 6ZM0 16H16V18H0V16Z" fill="white"/>
+                        </svg>
+                </span>
+                <h5 style="color: #00103e;">Downloads</h5>
+            </button>
+
+        </div>
+
+        <div class="leads mt-2 ">
+            <div class="header d-flex align-items-center justify-content-between w-100 mt-3">
+                <h5>Name of Lead</h5>
+                <h5>Email Address</h5>
+                <h5>Date</h5>
+
+            </div>
+            <section class="users d-flex flex-column gap-3 mt-4 custom-scrollbar">
+                <div class="user_item  d-flex align-items-center justify-content-between w-100">
+                     <span class="user-name d-flex align-items-center gap-5">
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 28" fill="none">
+                                <path d="M19 7C19 8.85652 18.2625 10.637 16.9497 11.9497C15.637 13.2625 13.8565 14 12 14C10.1435 14 8.36301 13.2625 7.05025 11.9497C5.7375 10.637 5 8.85652 5 7C5 5.14348 5.7375 3.36301 7.05025 2.05025C8.36301 0.737498 10.1435 0 12 0C13.8565 0 15.637 0.737498 16.9497 2.05025C18.2625 3.36301 19 5.14348 19 7ZM17 7C17 5.67392 16.4732 4.40215 15.5355 3.46447C14.5979 2.52678 13.3261 2 12 2C10.6739 2 9.40215 2.52678 8.46447 3.46447C7.52678 4.40215 7 5.67392 7 7C7 8.32608 7.52678 9.59785 8.46447 10.5355C9.40215 11.4732 10.6739 12 12 12C13.3261 12 14.5979 11.4732 15.5355 10.5355C16.4732 9.59785 17 8.32608 17 7ZM3.5 16C2.57174 16 1.6815 16.3687 1.02513 17.0251C0.368749 17.6815 0 18.5717 0 19.5V20C0 22.393 1.523 24.417 3.685 25.793C5.859 27.177 8.802 28 12 28C15.198 28 18.14 27.177 20.315 25.793C22.477 24.417 24 22.393 24 20V19.5C24 18.5717 23.6313 17.6815 22.9749 17.0251C22.3185 16.3687 21.4283 16 20.5 16H3.5ZM2 19.5C2 19.1022 2.15804 18.7206 2.43934 18.4393C2.72064 18.158 3.10218 18 3.5 18H20.5C20.8978 18 21.2794 18.158 21.5607 18.4393C21.842 18.7206 22 19.1022 22 19.5V20C22 21.473 21.06 22.949 19.241 24.106C17.434 25.256 14.877 26 12 26C9.123 26 6.566 25.256 4.759 24.106C2.939 22.95 2 21.472 2 20V19.5Z" fill="#9D9D9D"></path>
+
+                            </svg>
+                            <span>John Doe</span>
+                        </div>
+                        <!-- toggle class active to hide or show active indicator -->
+                        <span class="active_indicator active"><span class="ball"></span></span>
+                     </span>
+
+                     <span class="email">johndoe@mail.com</span>
+                     <span>1/8/9/2022</span>
+
+                </div>
+
+                 <div class="user_item  d-flex align-items-center justify-content-between w-100">
+                     <span class="user-name d-flex align-items-center gap-5">
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 28" fill="none">
+                                <path d="M19 7C19 8.85652 18.2625 10.637 16.9497 11.9497C15.637 13.2625 13.8565 14 12 14C10.1435 14 8.36301 13.2625 7.05025 11.9497C5.7375 10.637 5 8.85652 5 7C5 5.14348 5.7375 3.36301 7.05025 2.05025C8.36301 0.737498 10.1435 0 12 0C13.8565 0 15.637 0.737498 16.9497 2.05025C18.2625 3.36301 19 5.14348 19 7ZM17 7C17 5.67392 16.4732 4.40215 15.5355 3.46447C14.5979 2.52678 13.3261 2 12 2C10.6739 2 9.40215 2.52678 8.46447 3.46447C7.52678 4.40215 7 5.67392 7 7C7 8.32608 7.52678 9.59785 8.46447 10.5355C9.40215 11.4732 10.6739 12 12 12C13.3261 12 14.5979 11.4732 15.5355 10.5355C16.4732 9.59785 17 8.32608 17 7ZM3.5 16C2.57174 16 1.6815 16.3687 1.02513 17.0251C0.368749 17.6815 0 18.5717 0 19.5V20C0 22.393 1.523 24.417 3.685 25.793C5.859 27.177 8.802 28 12 28C15.198 28 18.14 27.177 20.315 25.793C22.477 24.417 24 22.393 24 20V19.5C24 18.5717 23.6313 17.6815 22.9749 17.0251C22.3185 16.3687 21.4283 16 20.5 16H3.5ZM2 19.5C2 19.1022 2.15804 18.7206 2.43934 18.4393C2.72064 18.158 3.10218 18 3.5 18H20.5C20.8978 18 21.2794 18.158 21.5607 18.4393C21.842 18.7206 22 19.1022 22 19.5V20C22 21.473 21.06 22.949 19.241 24.106C17.434 25.256 14.877 26 12 26C9.123 26 6.566 25.256 4.759 24.106C2.939 22.95 2 21.472 2 20V19.5Z" fill="#9D9D9D"></path>
+
+                            </svg>
+                            <span>John Felix</span>
+                        </div>
+                        <!-- toggle class active to hide or show active indicator -->
+                        <span class="active_indicator "><span class="ball"></span></span>
+                     </span>
+
+                     <span class="email">felixjohn@mail.com</span>
+                     <span>1/8/9/2022</span>
+
+                </div>
+
+            </section>
+        </div>
+
+       </section>
+
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
